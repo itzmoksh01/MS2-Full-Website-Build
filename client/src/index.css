@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Dark theme base */
+  --background: 0 0% 7%;
+  --foreground: 0 0% 95%;
+
+  /* Brand Colors */
+  --primary: 11 82% 76%;      /* Peach #F3A28F */
+  --primary-foreground: 0 0% 10%;
+  
+  --secondary: 171 42% 67%;   /* Mint #8ACAC1 */
+  --secondary-foreground: 0 0% 10%;
+
+  --muted: 0 0% 15%;
+  --muted-foreground: 0 0% 65%;
+
+  --accent: 0 0% 12%;
+  --accent-foreground: 0 0% 98%;
+
+  --card: 0 0% 9%;
+  --card-foreground: 0 0% 95%;
+
+  --border: 0 0% 15%;
+  --input: 0 0% 15%;
+  --ring: 11 82% 76%;
+
+  --radius: 0.5rem;
+
+  --font-sans: 'Montserrat', sans-serif;
+  --font-display: 'Playfair Display', serif;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground antialiased selection:bg-primary/30 selection:text-primary-foreground;
+    font-family: var(--font-sans);
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    font-variant-numeric: lining-nums;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-secondary to-secondary;
+  }
+  
+  .glass-card {
+    @apply bg-card/50 backdrop-blur-sm border border-white/5;
+  }
+}

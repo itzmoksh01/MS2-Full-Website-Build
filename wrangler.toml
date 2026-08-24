@@ -1,0 +1,15 @@
+name = "ms2-entertainment-hub"
+compatibility_date = "2026-01-01"
+pages_build_output_dir = "dist/public"
+
+# NOT part of the original source — Cloudflare Pages deployment config only.
+# See MIGRATION-NOTES.md. Fill in database_id after running:
+#   npx wrangler d1 create ms2-contact-db
+[[d1_databases]]
+binding = "DB"
+database_name = "ms2-contact-db"
+database_id = "7dee91d0-9f7e-43d8-88f8-a758455c6bc9"
+migrations_dir = "d1-migrations"
+
+# WEB3FORMS_ACCESS_KEY is set as a secret, not here:
+#   npx wrangler pages secret put WEB3FORMS_ACCESS_KEY
